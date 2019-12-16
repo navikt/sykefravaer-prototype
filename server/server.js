@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 console.log("made it to express static");
 
-app.use(express.static(path.join(__dirname), "../", "build"));
+app.use(express.static(path.join(__dirname), "..", "build"));
 console.log("passed express static");
 app.use(
   cors({
