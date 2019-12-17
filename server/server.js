@@ -5,16 +5,14 @@ const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-console.log("made it to express static");
-console.log(path.join(__dirname), "..", "build");
+
 app.use(express.static(path.join(__dirname, "..", "build")));
-console.log("passed express static");
 app.use(
   cors({
     allowedHeaders: ["sessionId", "Content-Type"],
     exposedHeaders: ["sessionId"],
     origin: [
-      "http://localhost:3000",
+      "http://localhost:5000",
       "https://sykefravaer-prototype.herokuapp.com/"
     ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -22,6 +20,11 @@ app.use(
   })
 );
 
+// ROUTES
+app.get("sykmeldinger", (req, res) => {
+  res.send("hello world");
+});
+
 app.listen(PORT, () => {
-  console.log("Listeneing on port " + PORT);
+  console.log("Listening on port " + PORT);
 });
