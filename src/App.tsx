@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './App.less';
+import './basic.less';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import useAppStore from './sykefravaer/store/useAppStore';
+import DataFetcher from './sykefravaer/components/DataFetcher';
+import DittSykefravaer from './sykefravaer/pages/DittSykefravaer/DittSykefravaer';
+import DineSykmeldinger from './sykefravaer/pages/DineSykmeldinger';
+import Sykmelding from './sykefravaer/pages/Sykmelding';
+import Soknad from './sykefravaer/pages/Soknad';
+import BeslutningFraNav from './sykefravaer/pages/BeslutningerFraNav/BeslutningFraNav';
+import SykmeldingOversikt from './sykefravaer/pages/SykmeldingOversikt';
+import Inntektsmelding from './sykefravaer/pages/Inntektsmelding';
+import TidslinjeSide from './sykefravaer/pages/TidslinjeSide/TidslinjeSide';
+
+const App = () => {
+    return (
+        <useAppStore.Provider>
+            <DataFetcher>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={DittSykefravaer} />
+                        <Route exact path="/sykmeldinger/" component={DineSykmeldinger} />
+                        <Route exact path="/tidslinjen/" component={TidslinjeSide} />
+                        <Route exact path="/sykmeldinger/:id/" component={SykmeldingOversikt} />
+                        <Route exact path="/sykmeldinger/:id/inntektsmelding/" component={Inntektsmelding} />
+                        <Route exact path="/sykmeldinger/:id/vis/" component={Sykmelding} />
+                        <Route exact path="/sykmeldinger/:id/soknad/" component={Soknad} />
+                        <Route exact path="/sykmeldinger/:id/beslutning/" component={BeslutningFraNav} />
+                    </Switch>
+                </BrowserRouter>
+            </DataFetcher>
+        </useAppStore.Provider>
+    );
+};
 
 export default App;
