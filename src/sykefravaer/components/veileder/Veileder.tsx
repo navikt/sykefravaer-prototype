@@ -1,41 +1,41 @@
 import React from 'react';
 import Veilederpanel from 'nav-frontend-veilederpanel';
-import { Hovedknapp } from 'nav-frontend-knapper';
+import { Knapp } from 'nav-frontend-knapper';
 
-import './Veileder.less';
+import './veileder.less';
 import Bjorn from './Bjorn.svg';
-
-type StemningTypes = 'glad' | 'noytral';
 
 interface VeilederProps {
     innhold: JSX.Element;
+    fargetema?: string;
+    type?: string;
+    kompakt?: boolean;
     onClick?: () => void;
     knappTekst?: string;
-    stemning: StemningTypes;
+    svg?: string;
 }
 
-const hentSvg = (stemning: StemningTypes) => {
-    if (stemning === 'glad') {
-        return Bjorn;
-    }
-
-    // TODO: Nøytral Bjorn
-    if (stemning === 'noytral') {
-        return Bjorn;
-    }
-
-    return Bjorn;
-};
-
-const Veileder = ({ innhold, onClick, knappTekst, stemning }: VeilederProps) => {
-    const svg = hentSvg(stemning);
+const Veileder = ({
+    fargetema = 'normal',
+    kompakt = false,
+    type = undefined,
+    innhold,
+    onClick,
+    knappTekst,
+    svg = Bjorn,
+}: VeilederProps) => {
     return (
         <div className="veileder-container">
-            <Veilederpanel kompakt fargetema="advarsel" svg={<img src={svg} alt="NAV Veileder" />}>
+            <Veilederpanel
+                kompakt={kompakt}
+                type={type as any}
+                fargetema={fargetema as any}
+                svg={<img src={svg} alt="NAV Veileder" />}
+            >
                 {innhold}
                 {onClick && (
                     <div className="veileder-knapp">
-                        <Hovedknapp onClick={onClick}>{knappTekst}</Hovedknapp>
+                        <Knapp onClick={onClick}>{knappTekst}</Knapp>
                     </div>
                 )}
             </Veilederpanel>

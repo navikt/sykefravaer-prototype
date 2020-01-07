@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import Brodsmuler from '../../components/brodsmuler/brodsmuler';
-import useAppStore from '../../../store/useAppStore';
+import useAppStore from '../../store/useAppStore';
 
 import { Beslutning } from '../../types/soknadTypes';
 import SoknadGodkjent from './beslutninger/SoknadGodkjent';

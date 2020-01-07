@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import useFetch, { isNotStarted, FetchState, FetchStatus } from '../../hooks/useFetch';
+import useFetch, { isNotStarted, FetchState, FetchStatus } from '../../../hooks/useFetch';
 import useForm, { FormContext } from 'react-hook-form';
 import { skjemavalidering } from './valideringsSkjema';
 import { Fieldset, Radio, SkjemaGruppe } from 'nav-frontend-skjema';

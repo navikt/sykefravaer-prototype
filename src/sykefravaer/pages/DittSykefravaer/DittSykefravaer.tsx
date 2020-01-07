@@ -10,7 +10,8 @@ import RelatertInfo from './components/RelatertInfo';
 import CardContainer from './components/CardContainer';
 import SykefravaerHeader from './components/SykefravaerHeader';
 
-import LenkepanelWrapper from './components/LenkepanelWrapper';
+import LenkepanelWrapper from '../../components/Lenkepanel/LenkepanelWrapper';
+import OverskriftSkille from '../../components/OverskriftSkille/OverskriftSkille';
 
 const brodsmuler: Brodsmule[] = [
     {
@@ -28,25 +29,26 @@ const DittSykefravaer = () => {
             <SykefravaerHeader brodsmuler={brodsmuler} />
             <div className="limit">
                 <Veileder
+                    kompakt
                     innhold={
                         <>
                             <Systemtittel>Velkommen til ditt sykefravær.</Systemtittel>
-                            <p>Denne teksten avhenger av hvilke sykemeldinger brukeren har/ikke har.</p>
+                            <p>
+                                Denne tjenesten gir deg en detaljert oversikt over sykmeldingsperioden din. Her får du
+                                informasjon om hva som er blitt gjort eller må gjøres før vi kan utbetale sykepenger.
+                            </p>
                         </>
                     }
-                    stemning="glad"
-                    onClick={() => {}}
-                    knappTekst="Demo knapp"
                 />
-
+                <OverskriftSkille tekst="Aktuelt" />
                 <LenkepanelWrapper
                     lenke="/sykmeldinger/"
                     tittel="Dine sykmeldinger"
-                    tekst="Oversikt over dokumenter, status og beslutning for dine
-                sykeperioder."
+                    tekstGra="Oversikt over dokumenter, status og beslutning for dine sykeperioder."
                     svg={bjorn}
+                    ikonbakgrunn="gul"
                 />
-
+                <OverskriftSkille tekst="Informasjon og veiledning" />
                 <CardContainer>
                     <Card
                         tittel="Informasjon om sykefravær"

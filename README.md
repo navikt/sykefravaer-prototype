@@ -17,13 +17,22 @@ Hver av disse mappene inneholder:
 -   En basic.less-fil som importerer /src/basic.less (Dette er for å slippe å legge til en /../ i hver .less-fil som importerter basic.less)
 -   Innholdet i /src/-mappen til hver app. Dette kopieres over fra de ulike appene ved behov.
 
-Datafetcher:
+src/Datafetcher:
 
 -   Datafetcher oppdateres med de nødvendige mockene for å hente data. Dette må manuelt merges for de forskjellige appene.
 
-App.tsx:
+src/App.tsx:
 
 -   App.tsx oppdateres med samlede routes for de ulike appene.
+
+src/store/useAppStore.ts:
+
+-   Merges inn i /src/useAppStore.ts
+-   useAppStore.ts i hver av appene importerer kun /src/useAppStore.ts
+
+src/mock/index.ts:
+
+-   Oppdateres med mock data
 
 ## Køring
 

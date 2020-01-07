@@ -8,10 +8,10 @@ import DataFetcher from './DataFetcher';
 
 // Ditt Sykefravær
 import DittSykefravaer from './sykefravaer/pages/DittSykefravaer/DittSykefravaer';
-import DineSykmeldinger from './sykefravaer/pages/DineSykmeldinger';
+import DineSykmeldinger from './sykefravaer/pages/DineSykmeldinger/DineSykmeldinger';
 import Soknad from './sykefravaer/pages/Soknad';
 import BeslutningFraNav from './sykefravaer/pages/BeslutningerFraNav/BeslutningFraNav';
-import SykmeldingOversikt from './sykefravaer/pages/SykmeldingOversikt';
+import SykmeldingOversikt from './sykefravaer/pages/SykmeldingOversikt/SykmeldingOversikt';
 import Inntektsmelding from './sykefravaer/pages/Inntektsmelding';
 import TidslinjeSide from './sykefravaer/pages/TidslinjeSide/TidslinjeSide';
 
