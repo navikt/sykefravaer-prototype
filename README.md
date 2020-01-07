@@ -6,7 +6,24 @@ Laget med [Create React App](https://github.com/facebook/create-react-app).
 
 ## Utvikling
 
-Trekk inn oppdatert ko
+/src/ inneholder 3 mapper:
+
+-   Sykmeldinger
+-   Sykepenger
+-   Sykefravaer
+
+Hver av disse mappene inneholder:
+
+-   En basic.less-fil som importerer /src/basic.less (Dette er for å slippe å legge til en /../ i hver .less-fil som importerter basic.less)
+-   Innholdet i /src/-mappen til hver app. Dette kopieres over fra de ulike appene ved behov.
+
+Datafetcher:
+
+-   Datafetcher oppdateres med de nødvendige mockene for å hente data. Dette må manuelt merges for de forskjellige appene.
+
+App.tsx:
+
+-   App.tsx oppdateres med samlede routes for de ulike appene.
 
 ## Køring
 

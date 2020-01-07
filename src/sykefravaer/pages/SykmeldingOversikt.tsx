@@ -12,7 +12,7 @@ import './sykmeldingOversikt.less';
 
 import book from '../svg/book.svg';
 import bjorn from '../svg/bjorn.svg';
-import useAppStore from '../store/useAppStore';
+import useAppStore from '../../store/useAppStore';
 import { Knapp } from 'nav-frontend-knapper';
 import StegindikatorSteg from 'nav-frontend-stegindikator/lib/stegindikator-steg';
 import Header from '../components/Header/Header';

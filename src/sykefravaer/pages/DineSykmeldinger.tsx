@@ -6,7 +6,7 @@ import Brodsmuler, { Brodsmule } from '../components/brodsmuler/brodsmuler';
 import Veileder from '../components/veileder/Veileder';
 import { LenkepanelBase } from 'nav-frontend-lenkepanel';
 import book from '../svg/book.svg';
-import useAppStore from '../store/useAppStore';
+import useAppStore from '../../store/useAppStore';
 import Header from '../components/Header/Header';
 import UnderstreketOverskrift from '../components/UnderstreketOverskrift/UnderstreketOverskrift';
 
