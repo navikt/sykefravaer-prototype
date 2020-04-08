@@ -1,4 +1,4 @@
-# Sykefravær Prototype
+# Sykefravær Prototype [ikke i bruk]
 
 For testing av nytt design til ditt sykefravær.
 
@@ -72,7 +72,3 @@ Kjøring og port-forwarding. Merk: Dersom PORT settes i env.vars. må dette endr
 docker run -p 5000:5000 sykefravaer-prototype
 ```
 
-## Deployment
-
-Kjøres på [heroku](http://sykefravaer-prototype.herokuapp.com/).
-Skal etterhvert over på NAIS på GCP.
